@@ -15,7 +15,6 @@ Makefile
 **/*.log
 **/*.lot
 **/*.out
-**/*.pdf
 **/*.run.xml
 **/*.slg
 **/*.slo

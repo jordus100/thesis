@@ -97,6 +97,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{esint}
+\RequirePackage{float}
 %\RequirePackage[version=4]{mhchem}
 \ifXeTeX
     \RequirePackage{mathspec} % wczytuje również fontspec
