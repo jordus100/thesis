@@ -76,7 +76,7 @@ Początkowo próbowano zastosować zwykłe baterie AA 1,5V, połączone szeregow
 To rozwiązanie okazało się nieefektywne -- Raspberry Pi nawet nie było w stanie w całości przejść sekwencji bootowania.
 Prawdopodobnie wykorzystane baterie AA nie mały wystarczającej wydajności prądowej.
 
-Ostatecznie zastosowano dwie baterie litowo-jonowe 3,7V typu 18650 o pojemności 3,2 Ah połączone szeregowo.
+Ostatecznie zastosowano dwie baterie litowo-jonowe 3,7V typu 18650 o pojemności 3,4 Ah połączone szeregowo.
 Mają one wydajność prądową klasy 2C, co oznacza, że można z nich pobierać nawet 6,4 A prądu.
 Rozwiązanie to sprostało wyzwaniu jednoczesnego zasilenia mikrokomputera z peryferiami i silników.
 Dodatkową stabilność zapewniło podłączenie równolegle dwóch kondensatorów elektrolitycznych o łącznej pojemności 4800 $\mu$F w celu złagodzenia chwilowych spadków napięcia.
@@ -117,3 +117,15 @@ Efekt końcowy przedstawiają zdjęcia robota z góry \ref{rys:robot_top}, z prz
     \caption{Zdjęcie robota z tyłu}
     \label{rys:robot_back}
 \end{figure}
+
+\section{Koszty}
+Kosztorys przedstawiający wydatki na poszczególne elementy robota, na podstawie sklepu internetowego \href{https://botland.com.pl/}{Botland}:
+\begin{itemize}
+    \item zestaw podwozia z silnikami -- 55 zł,
+    \item nakładka Motor Driver Hat -- 95 zł,
+    \item Raspberry Pi 3B+ -- 180 zł,
+    \item baterie litowo-jonowe -- 2 x 21 zł,
+    \item kamera Raspberry Pi Camera V2 -- 83 zł,
+    \item przewody i inne drobne elementy -- ok. 15 zł.
+\end{itemize}
+Całkowity koszt wyniósł ok. 500 zł.

@@ -45,20 +45,80 @@
 % In case of thesis in English swap the order - English version goes first.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \streszczeniepracy{
-To jest streszczenie. To jest trochę za krótkie, jako że powinno zająć całą stronę.
+Praca dotyczy konstrukcji i oprogramowania mobilnego robota wyposażonego w kamerę, wykorzystującego Raspberry Pi jako platformę sprzętową.
+Celem pracy było stworzenie funkcjonalnego zdalnie sterowanego robota, który może być wykorzystany do monitorowania budynku.
 
-\lipsum[1-4]
+We wstępie przedstawiono cel i zakres pracy, jak i motywację wyboru tematyki.
+Przybliżono problematykę nowoczesnych metod monitoringu i zaprezentowano istniejące rozwiązania naukowe oraz komercyjne.
+
+W kolejnej części opisano sprzęt, który został użyty do zbudowania robota.
+Opisano wykorzystane elementy konstrukcyjne -- gotowy zestaw podwozia z silnikami elektrycznymi.
+Przedstawiono nakładkę Motor Driver Hat, która pozwala na sterowanie silnikami i zasilanie Raspberry Pi.
+Opisano również zasilanie akumulatorowe, które zastosowano w robocie.
+Zamieszczono schemat całego układu.
+Przedstawiono również koszty związane z budową robota.
+
+Trzecia część pracy dotyczy oprogramowania.
+Opisano definicję wymagań za pomocą diagramu przypadków użycia.
+Przedstawiono architekturę systemu, w tym komunikację między poszczególnymi modułami.
+Wykorzystano diagram komponentów do przedstawienia zależności pomiędzy mikroserwisami po stronie backendu i ich połączenia z frontendem.
+Opisano architekturę wdrożenia systemu na Raspberry Pi i wykorzystanie wirtualnej sieci prywatnej ZeroTier.
+Przedstawiono mikroserwis użytkowników i ustawień poprzez wymienienie wystawionych przez niego endpointów z funkcjonalnościami i ukazanie architektury na diagramie klas.
+Przedstawiony został również mikroserwis sterowania silnikami robota, który wystawia serwer Websocket pozwalający na komunikację w czasie rzeczywistym z robotem.
+Kolejnym mikroserwisem jest serwer kamery, który obsługuje strumieniowanie obrazu z kamery na żywo.
+Ostatni opisany mikroserwis backendowy to serwis archiwizacji zdjęć, który wysyła zdjęcia z kamery na zdalny serwer SFTP.
+Dalej przybliżono stronę internetową, która pozwala na zdalne sterowanie robotem.
+
+Kolejna część pracy dotyczy testów.
+Opisano testy oprogramowania, które były przeprowadzane w trakcie wytwarzania.
+Wymieniono testy jednostkowe, integracyjne, end-to-end i manualne.
+Spisane zostały scenariusze testowe robota, które były wykonywane po zakończeniu budowy sprzętu i oprogramowania.
+Przedstawiono wyniki testów, które wykazały, że robot spełnia swoje zadanie.
+
+Ostatnia część pracy to podsumowanie.
+Stwierdzono, że cel pracy został zrealizowany.
+Wskazano, że część sprzętowa ma charakter prototypowy, ale system informatyczny jest gotowy do dalszego rozwoju.
+Przedstawiono możliwości rozwoju projektu w przyszłości.
 } % koniec streszczenia
 
-\slowakluczowe{A, B, C}
+\slowakluczowe{robot, kamera, monitorowanie, Raspberry Pi, sterowanie, aplikacja webowa, Python} % słowa kluczowe
 
 \thesisabstract{
-This is abstract. This one is a little too short as it should occupy the whole page.
+The thesis is about the construction and software development of a mobile robot equipped with a camera, using Raspberry Pi as the hardware platform.
+The aim of the thesis was to create a functional remotely controlled robot that can be used for building surveillance.
 
-\lipsum[1-4]
+The introduction presents the purpose and scope of the work, as well as the motivation behind choosing this topic.
+It discusses the challenges of modern monitoring methods and presents existing scientific and commercial solutions.
+
+The next section describes the hardware used to build the robot.
+It details the components used in the construction — a ready-made chassis kit with electric motors.
+The Motor Driver Hat extension, which enables motor control and powers the Raspberry Pi, is described.
+The battery power supply used in the robot is also covered.
+A schematic of the entire system is included, along with the costs associated with building the robot.
+
+The third section focuses on the software.
+The requirements are defined using a use case diagram.
+The system architecture is presented, including communication between its individual modules.
+A component diagram is used to show dependencies between backend microservices and their connection to the frontend.
+The system deployment architecture on the Raspberry Pi and the use of the ZeroTier virtual private network are described.
+The user and settings microservice is detailed, listing its exposed endpoints with functionalities and illustrating its architecture with a class diagram.
+The motor control microservice is presented, which exposes a WebSocket server enabling real-time communication with the robot.
+Another microservice is the camera server, which handles live video streaming from the camera.
+The final backend microservice described is the photo archiving service, which sends camera photos to a remote SFTP server.
+The web interface allowing remote control of the robot is also introduced.
+
+The next section covers testing.
+It describes software tests conducted during development, including unit, integration, end-to-end, and manual tests.
+Test scenarios for the robot, performed after completing the hardware and software, are listed.
+The test results are presented, showing that the robot fulfills its intended purpose.
+
+The final section is the conclusion.
+It states that the thesis objective was achieved.
+It notes that the hardware is of a prototype nature, but the IT system is ready for further development.
+Future development opportunities for the project are outlined.
 } % end of abstract
 
-\thesiskeywords{X, Y, Z}
+\thesiskeywords{robot, camera, surveillance, Raspberry Pi, control, web application, Python} % keywords
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Tu zaczyna się dokument
@@ -80,14 +140,8 @@ This is abstract. This one is a little too short as it should occupy the whole p
     % Strony końcowe - można zakomentować, jeśli zbędne
     % Additional pages - comment out if not needed
     
-    % Wykaz symboli i skrótów - patrz opis w tekście przykładowym
-    \acronymslist
     % Spis rysunków
     \listoffigures
-    % Spis tabel
-    \listoftables
-    % Załączniki (plik appendices.tex)
-    \easyappendices
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

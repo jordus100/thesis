@@ -1,0 +1,53 @@
+\section{Testy oprogramowania}
+W czasie wytwarzania oprogramowanie było testowane przez 3 rodzaje testów automatycznych:
+\begin{itemize}
+    \item jednostkowe - sprawdzające poprawność logiki kodu,
+    \item integracyjne - weryfikujące poprawność zachowania poszczególnych mikroserwisów,
+    \item end-to-end - symulujące zachowanie użytkownika.
+\end{itemize}
+
+Testy integracyjne serwisu użytkowników i ustawień \ref{main_backend} zostały napisane z wykorzystaniem biblioteki \href{https://pypi.org/project/Flask-Testing/}{\textit{Flask testing}}.
+W przypadku serwisów napisanych za pomocą frameworka FastAPI wykorzystano jego wbudowane biblioteki do testowania.
+
+Testy end-to-end zostały zbudowane za pomocą nowoczesnego narzędzia przeznaczonego do tego celu -- \href{https://www.cypress.io/}\textit{Cypress}.
+Użyto języka Javascript.
+
+Ponadto zostały przeprowadzone szerokie testy manualne, których scenariusze zostały dopasowane do przypadków użycia zdefiniowanych w wymaganiach \ref{rys:usecases}.
+Aby można było testować oprogramowanie bez uruchamiania całego robota, klasy odpowiadające za sterowanie silnikami i zbieranie obrazu z kamery zostały zastąpione klasami pozorowanymi (ang. \textit{mock}).
+
+\section{Testy robota}
+Po ukończeniu budowy sprzętu i oprogramowania przystąpiono do sprawdzania działania całego rozwiązania.
+Powtórzono napisane wcześniej automatyczne testy end-to-end, tym razem na w pełni wdrożonym systemie.
+
+Głównym przypadkiem użycia robota jest zdalne sterowanie przez internet.
+Zostało to przetestowane przez autora projektu i osobę postronną w następujących scenariuszach:
+
+Scenariusz 1 -- sterowanie robotem w sieci lokalnej.
+Operator był podłączony na komputerze do tej samej sieci bezprzewodowej Wi-Fi, co robot.
+Średnie opóźnienie (ping) wynosił ok. 15 ms.
+
+Scenariusz 2 -- sterowanie robotem przez internet na dobrym łączu.
+Operator był podłączony na komputerze do innej sieci niż robot.
+Sieć robota i operatora były połączone światłowodem.
+Średnie opóźnienie (ping) wynosił ok. 30 ms.
+
+Scenariusz 3 -- sterowanie robotem przez internet na łączu mobilnym.
+Operator łączył się z robotem na telefonie korzystając z bezprzewodowej sieci komórkowej 4G LTE.
+Średnie opóźnienie (ping) wynosił ok. 60 ms.
+
+Robot był umieszczony na płaskiej podłodze w biurze, gdzie były typowe dla tego środowiska przeszkody.
+
+Subiektywne odczucia po testach były takie, że robot jest w stanie spełniać swoją rolę.
+Jednak sterowanie nie było łatwe i wymagało przyzwyczajenia.
+Często ruchy robota wydawały się zbyt gwałtowne.
+Zmniejszenie parametru maksymalnej mocy silników pomagało w płynniejszej jeździe.
+W scenariuszu 3 trochę przeszkadzało opóźnienie transmisji obrazu z kamery, szczególnie, że jest on ograniczony do 10 klatek na sekundę.
+
+Robot nie radzi sobie z pokonywaniem wysokich progów i innych podobnych przeszkód.
+Jeszcze większym oczywistym problemem są drzwi lub schody.
+
+Kolejnym testem było zmierzenie zużycia energii elektrycznej.
+W tym celu zmierzono natężenie prądu pobieranego z akumulatorów multimetrem.
+Stwierdzono, że w bezruchu pobierane jest ok. 0.35 A.
+W trakcie ruchu silników z wypełnieniem PWM 50\% natężenie wynosiło ok. 0.7 A.
+Na podstawie tych danych i pojemności akumulatorów 3.4 Ah obliczono, że bez jazdy robot może działać przez około 8 godzin.
